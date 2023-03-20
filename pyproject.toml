@@ -1,0 +1,21 @@
+[tool.pdm]
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "ccp", email = "bopa012@vip.qq.com"},
+]
+dependencies = [
+    "python-dotenv>=0.21.1",
+    "toml>=0.10.2",
+    "pyyaml>=6.0",
+    "colorama>=0.4.6",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
