@@ -14,7 +14,11 @@ class ThreadLogger():
         "fatal": logging.FATAL,
         "info": logging.INFO,
         "off": logging.OFF,
-        "warn": logging.WARN
+        "warn": logging.WARN,
+        "terminate": logging.TERM,
+        "critical": logging.CRITICAL,
+        "exception": logging.ERROR,
+
     }
     def __init__(self, filePath: str, queue, logLevel="debug", name="test"):
         super().__init__()
