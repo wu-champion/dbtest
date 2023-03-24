@@ -11,6 +11,7 @@ from typing import Tuple
 from .dataclass import CmdOption, ResultLog
 from .logger import Logger, ThreadLogger
 from .service import Service
+from .case import CaseManage
 
 
 class DBTestFrame:
@@ -27,6 +28,8 @@ class DBTestFrame:
         self._run_log_dir, self._log_dir_name = self._get_run_log_dir()
         self._logger: Logger = None
         self._init_log()
+
+        self._case_group: CaseManage = None
 
 
     def _get_run_log_dir(self) -> Tuple[str, str]:
