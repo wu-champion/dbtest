@@ -38,7 +38,6 @@ class CmdOption:
     group_dirs: List[str] = None
 
 
-
 class DBJsonEncoder(json.JSONEncoder):
 
     def default(self, o: Any) -> Any:
@@ -67,3 +66,13 @@ class ResultLog:
             delta = self.stop_time - self.start_time
             self.elapse = delta.seconds + delta.microseconds / 1000000
         return json.dumps(self.__dict__, cls=DBJsonEncoder, ensure_ascii=False)
+
+
+class Singleton(type):
+    _instances = {}
+
+    def __call__(cls, *args: Any, **kwds: Any) -> Any:
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__call__(*args, **kwds)
+
+        return cls._instances[cls]
