@@ -10,8 +10,8 @@ class MysqlCom(Service):
     def __init__(self, name: str = None, version: str = None) -> None:
         super().__init__(name, version)
 
-    def setup(self):
-        return super().setup()
+    def install(self, *args, **kwargs):
+        return super().install()
 
     def destroy(self):
         return super().destroy()
@@ -19,5 +19,14 @@ class MysqlCom(Service):
     def use(self):
         return super().use()
 
-    def start(self):
+    def start(self,
+        config=None,
+    ):
+        '''
+            start by:
+                1. mysqld
+                2. mysql_safe
+                3. mysql_multi
+                4. mysql.server
+        '''
         return super().start()

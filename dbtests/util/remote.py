@@ -18,9 +18,7 @@ class Remote:
             remote.connect(host, user, password)
             remote.get(file, path)
             remote.close()
-    Author: ccp
-    return {*}
-    Date: 2023-03-22 03:17:14
+    return Remote()
     param {*} self
     param {Logger} logger
     '''
